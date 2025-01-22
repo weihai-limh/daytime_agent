@@ -78,7 +78,7 @@
 	-用配置的邮件服务进行语音合成
 ```
 <br>文本推理及视频推理
-![本地路径](./document/video/llm_chat_api.mp4 "文本推理及视频推理")
+<video width="640" height="360" controls><source src="./document/video/llm_chat_api.mp4" type="video/mp4"></video>
 <br>语言转化gif占位
 <br>天气查询gif占位
 <br>语音合成gif占位
