@@ -13,7 +13,7 @@
 <br>3.方案应用模块：接收由LLM和知识管理模块生成的解决方案，并对其进行解析和逻辑抽取，然后分配执行次序。
 <br>4.指令模块：根据方案应用模块提供的执行次序，调用相应的微服务完成子任务，并最终实现解决方案。
 # 工作流程
-![本地路径](./document/image/daytime_agent_di1.png "模块说明附图")
+![模块说明附图](./document/image/daytime_agent_di1.png )
 <br>1.用户输入问题：用户通过代理模块输入问题。
 <br>2.生成解决方案：LLM结合知识管理模块中的知识，生成基于问题和知识的解决方案。
 <br>3.解析与逻辑抽取：方案应用模块接收解决方案，利用LLM和图数据库从中抽取逻辑，并分配执行次序。
@@ -27,7 +27,7 @@
 <br>指令模块通过(/processapi)被调用,调用后通过activation_order函数将指令映射为请求参数,并提交到对应的服务执行.
 <br>指令模块的返回除了支持文本形式的返回外,还支持音视频,模型等形式等形式的返回.
 <br>音视频模型等相较于文本更易理解,调用时可以额外调用'渲染函数'向调用方提供更友好的数据渲染.
-![本地路径](./document/image/daytime_agent_di2_instructions.png "指令模块附图")
+![指令模块附图](./document/image/daytime_agent_di2_instructions.png)
 #### 指令示例
 <br>以下为我的指令部分指令说明及实现演示:
 ##### 空间类指令
@@ -44,8 +44,8 @@
 指令:场景推理;物品查找,...
 地图导航类指令...
 ```
-<br>建筑推理gif占位
-<br>建筑计算gif占位
+<br>建筑推理及建筑计算
+![建筑推理及建筑计算](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/space_process1.gif)
 <br>我对于空间的理解主要分为室内和室外.空间数据的最低标准为其语义信息中具有经纬度信息.
 <br>室内室外的空间转化通过uber的h3进行换算,当有可视化需求时室外通过webgis渲染,室内通过webgl渲染.
 <br>室内数据主要为ifc为主的bim数据及openusd,室外数据主要为84的geojson
