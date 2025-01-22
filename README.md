@@ -45,7 +45,7 @@
 地图导航类指令...
 ```
 <br>建筑推理及建筑计算
-![建筑推理及建筑计算](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/space_process1.gif)
+![建筑推理和建筑计算](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/space_process1.gif)
 <br>我对于空间的理解主要分为室内和室外.空间数据的最低标准为其语义信息中具有经纬度信息.
 <br>室内室外的空间转化通过uber的h3进行换算,当有可视化需求时室外通过webgis渲染,室内通过webgl渲染.
 <br>室内数据主要为ifc为主的bim数据及openusd,室外数据主要为84的geojson
