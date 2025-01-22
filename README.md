@@ -78,7 +78,7 @@
 	-用配置的邮件服务进行语音合成
 ```
 <br>文本推理及视频推理
-![文本推理及视频推理](./document/video/llm_chat_api.gif )
+![文本推理及视频推理](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/llm_chat_api.gif)
 <br>语言转化gif占位
 <br>天气查询gif占位
 <br>语音合成gif占位
