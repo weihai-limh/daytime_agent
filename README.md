@@ -1,15 +1,24 @@
 # 项目概述
-<br>项目通过自然语言连接LLM和微服务，
-<br>实现AI以人类能理解的方式使用特定工具来解决问题。
+<br>The project is sharing part of the design of a running agent-based application,
+<br> which leverages LLMs for formal logical reasoning, 
+<br>microservices for transforming reasoning results into data processing outcomes, 
+<br>DDD and DSL for structuring and expressing domain knowledge, 
+<br>and digital_twin technologies (ifc+gis+iot) 
+<br>for realizing the physical manifestations of these data processing results.
+<br>项目分享一个已经运行的智能体应用的部分设计.
+<br>项目通过结合DDD+DSL进行LLM的形式化逻辑推理;
+<br>通过LLM+微服务完成推理结果到数据处理结果的转化;
+<br>最终通过ifc+gis+iot完成数据处理结果到物理现实的落地.
 ----------
 <br>我在从事产品经理的工作前做了6年的轨道交通设计,
 <br>通过十多年在不同体系及系统中的工作,我发现大多数的工作或需求:
 <br>一部分人是通过语言分配给其他人做,其他人是通过操作工具解决对应问题.
 <br>过去工作或需求的最终执行起作用的是肌肉力量,
 <br>随着时代的发展,现在起作用的可以是微服务.
+<br>(通过微服务完成领域任务并通过iot联动机械在现实落地)
 <br>如今微服务也可以被也可以被当作自然语言中的谓语及宾语被LLM驱动.
 <br>所以我在过去一年借助llm对语言的应用,
-<br>结合以数字孪生为核心的微服务,完成了这一部分的落地.
+<br>结合以数字孪生为核心的微服务,完成了应用的研发.
 <br>龙蛇之变,木雁之间.所以提炼自有服务中的内容做为项目分享一些过程。
 ## 模块构成
 <br>项目主要由以下四个模块构成：
