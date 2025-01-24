@@ -7,9 +7,10 @@
 <br>for realizing the physical manifestations of these data processing results.
 
 <br>项目分享一个已经运行的智能体应用的部分设计.
-<br>项目通过结合DDD+DSL进行LLM的形式化逻辑推理;
-<br>通过LLM+微服务完成推理结果到数据处理结果的转化;
-<br>最终通过ifc+gis+iot完成数据处理结果到物理现实的落地.
+<br>项目通过结合DDD+DSL进行LLM的'形式化逻辑推理';
+<br>通过LLM+微服务完成'形式化逻辑推理'的'推理结果'到'数据处理结果'的转化;
+<br>最后通过ifc+gis+iot完成'数据处理结果'到'物理现实的落地'.
+<br>最终实现'AI以人类能理解的方式自主使用相关工具解决现实世界的问题'
 
 ----------
 <br>我在从事产品经理的工作前做了6年的轨道交通设计,
