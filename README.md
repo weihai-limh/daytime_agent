@@ -5,10 +5,12 @@
 <br>DDD and DSL for structuring and expressing domain knowledge, 
 <br>and digital_twin technologies (ifc+gis+iot) 
 <br>for realizing the physical manifestations of these data processing results.
+
 <br>项目分享一个已经运行的智能体应用的部分设计.
 <br>项目通过结合DDD+DSL进行LLM的形式化逻辑推理;
 <br>通过LLM+微服务完成推理结果到数据处理结果的转化;
 <br>最终通过ifc+gis+iot完成数据处理结果到物理现实的落地.
+
 ----------
 <br>我在从事产品经理的工作前做了6年的轨道交通设计,
 <br>通过十多年在不同体系及系统中的工作,我发现大多数的工作或需求:
