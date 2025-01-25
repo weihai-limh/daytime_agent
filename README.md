@@ -85,7 +85,7 @@
 <br>如果问题包含空间的推理则可根据问题的复杂程度选择不同的处理模式.
 <br>当出于'空间推理'模式时,会将当前场景中的所有实体对应的语义信息格式化为prompt经llm推理返回出结论.
 <br>当出于'空间计算'模式时,会通过云服务进行对应的分析处理
-<br>具体详见![数字孪生相关](https://github.com/weihai-limh/daytime_agent/main/document/docs/digital_twin_correlation.md)
+<br>具体详见![数字孪生相关](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/digital_twin_correlation.md)
 ##### 资源类指令
 <br>资源类指令主要解决在语境中获得供谓语处置的资源;
 <br>例如:'我吃饭'中,'饭'即是被'吃'使用的资源(吃即为一个微服务)
