@@ -61,8 +61,8 @@
 	-用配置的室外导航服务根据<出发poi>及<到达poi>获取导航数据,并根据请求数据返回webgis或文本描述
 指令:场景推理;空间推理,<空间名称>,<建筑领域内要推理的问题>
 	-用配置的建筑推理服务对<空间名称>对应的映射为空间类语义化的数据结合'LLM+空间推理prompt'进行推理
-其他指令详见-占位符
 ```
+其他指令[详见](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/instructions_list.md)
 ![建筑推理和建筑计算](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/space_process1.gif)
 <br>以上示例为通过自然语言指令进行建筑推理,建筑计算及数据可视化
 ![室外导航数据生成及数据可视化](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/gisnav.gif)
@@ -88,8 +88,8 @@
 ```
 指令:基础应用;获取资源,<资源标签/资源实例>,<资源类型>
 	-用配置的获取资源服务中根据<资源类型>根据<资源标签/资源实例>的值获取资源
-其他指令详见-占位符
 ```
+其他指令[详见](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/instructions_list.md)
 ![资源查找](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/access_resources.gif)
 <br>其中包含了指令单独与HomeAssistant结合,所构建自己的智能家庭的应用
 ##### 数据处理类指令
@@ -107,8 +107,8 @@
 	-用配置的建筑模型转空间语义服务处理url指向的文件,将其转换为'可以被llm推理的空间类语义'
 指令:语义转化;地理信息数据转geojson,<url>
 	-用配置的地理信息数据转geojson服务处理url指向的文件,将其转换为'可以被llm推理的地理空间类语义'
-其他指令详见-占位符
 ```
+其他指令[详见](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/instructions_list.md)
 <br>影像数据处理主要处理音视频等影像资产,
 <br>例如通过封装FFmpeg的微服务完成音视频的剪辑与提取;
 <br>或者通过封装SAM和DepthPro的微服务完成图片中的对象提,追踪及点云重建;
@@ -124,8 +124,8 @@
 	-用部署的局部重绘根据遮罩url及参数处理url指向的图像
 指令:影像处理;视频提取音频,<视频url>
 	-用部署的视频提取音频服务处理url指向的图像
-其他指令详见-占位符
 ```
+其他指令[详见](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/instructions_list.md)
 ![绘制图表1](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/imageprocessing1.gif)
 <br>以上示例为通过自然语言指令调用图像处理指令完成对图像的处理
 <br>其余数据处理归类于其他数据处理,并包含图表生成等基础数据可视化服务
@@ -150,6 +150,7 @@
 指令:基础应用;发送邮件,<收件人>,<邮件标题>,<邮件内容>
 	-用配置的邮件服务进行语音合成
 ```
+其他指令[详见](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/instructions_list.md)<br>
 ![文本推理及图像推理](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/llm_chat_api.gif)
 <br>以上示例为通过自然语言指令调用在线api完成指令内涉及的文本推理及图像推理
 ![语言识别](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/speechrecognition.gif)
