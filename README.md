@@ -25,11 +25,13 @@
 <br>2.知识管理模块：存储和管理与问题相关的知识，包括领域知识、常识等，用于辅助LLM生成解决方案。
 <br>3.方案应用模块：接收由LLM和知识管理模块生成的解决方案，并对其进行解析和逻辑抽取，然后分配执行次序。
 <br>4.指令模块：根据方案应用模块提供的执行次序，调用相应的微服务完成子任务，并最终实现解决方案。
-<br>如'模块构成'所知,项目核心模块为'方案应用模块',
+
+----------
+<br>如'模块构成'所示,项目核心模块为'方案应用模块',
 <br>该模块核心机制是将AI根据prompt生成的解决方案转译为'结构化自然语言'描述的'解决方案',
 <br>形成新的'方案描述'后通过'正则或antlr4'从'解决方案的上下文中'文本中拆解出'指令示例'及执行次序,
 <br>而后由'指令模块'根据'指令示例'以函数的形式完成具体的'落地动作'
-<br>'结构化自然语言'详见[结构化自然语言](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/structured_natural_language.md)
+<br>'结构化自然语言'详见[方案应用模块之结构化自然语言](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/reasoning_module.md)
 ### 模块流程
 ![模块说明附图](./document/image/daytime_agent_di1.png )
 <br>1.用户输入问题：用户通过代理模块输入问题。
@@ -75,6 +77,7 @@
 ![室内导航数据生成及数据可视化](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/bimnav.gif)
 <br>以上示例为通过自然语言指令进行室内导航数据生成及数据可视化
 
+----------
 <br>我对于空间的理解主要分为室内和室外.空间数据的最低标准为其语义信息中具有经纬度信息.
 <br>室内室外的空间转化通过uber的h3进行换算,当有可视化需求时室外通过webgis渲染,室内通过webgl渲染.
 <br>室内数据主要为ifc为主的bim数据及openusd,室外数据主要为84的geojson
@@ -87,8 +90,8 @@
 <br>具体详见[数字孪生相关](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/digital_twin_correlation.md)
 ##### 资源类指令
 <br>资源类指令主要解决在语境中获得供谓语处置的资源;
-<br>例如:'我吃饭'中,'饭'即是被'吃'使用的资源(吃即为一个微服务)
-<br>资源类指令通过部署的资源服务从NAS中获取提取对应资源
+<br>例如:'指令:吃牛肉面'中,'牛肉面'即是被'吃'使用的资源,
+<br>资源类指令通过部署的资源服务从NAS中获取提取对应资源,
 <br>在实践中可以在NAS到'资源服务'中增设一个'对象存储'
 ```
 指令:基础应用;获取资源,<资源标签/资源实例>,<资源类型>
@@ -98,10 +101,8 @@
 ![资源查找](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/access_resources.gif)
 <br>其中包含了指令单独与HomeAssistant结合,所构建自己的智能家庭的应用
 ##### 数据处理类指令
-
 <br>数据处理类指令通过封装资数据处理方向的微服务对文本中涉及的数据进行语义及模态的转化
 <br>该类指令主要有三个方向,分别为:语义数据转化,影像数据处理,其他数据处理
-<br>
 <br>语义数据转化主要实现不同语义描述间的映射,
 <br>例如同样由若干几何构件组成的场景后续若要在建筑运维语境下则将其转化为'bim';
 <br>若要在数字孪生语境下应用则将其转化为'space';
@@ -165,13 +166,24 @@
 ![多语言翻译](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/translation.gif)
 <br>以上示例为通过自然语言指令完成指令内的多语言翻译
 ### 方案应用模块
-方案应用模块可对符合预期范式的文本段落进行推理.
-推理分为线性推理和节点推理,线性推理通过正则获取文本中的逻辑,
-节点推理通过antlr4+neo4j
+方案应用模块可对'结构化自然文本'(符合预期结构句法的自然语言段落)进行推理.
+推理分为线性推理和节点推理,线性推理通过正则获取'结构化自然文本'中的逻辑,
+节点推理通过antlr4+neo4j实现对'结构化自然文本'中的逻辑,
 #### 方案文本示例
 ![线性推理示例1](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/linear_reasoning.gif)
 <br>以上示例为线性推理示例
 ### 代理模块
 #### 模块示例
 ##### 穿什么
-## 关于项目
+<br>其中在该示例应用中未实际调用'虚拟换装'及使用私域'资源'
+![穿什么](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/agent_test1.gif)
+其数据链路如下:
+```
+//用户通过代理模块输入：
+{'prompt':'明天威海穿搭推荐'}
+//经'知识库'的经验'prompt'推理后得到'结构化自然语言'描述的'解决方案':
+{'prompt':"如果对象的内容中包含时间描述那么instructions1的值为'指令:天气指数;用户穿衣,<时间>,<城市名称or默认>,limh'如果instructions1的内容中包含'user_input'那么instructions2的值为'指令:影像处理;虚拟换装,<user_input的uuid>'如果instructions2的内容中包含'user_input'那么instructions3的值为'指令:场景推理;空间导航,<user_input的uuid>'"}
+//'指令模块'执行全部指令后,得到到具体衣服的'导航路径',并通过'图形引擎'完成渲染
+
+```
+<br>具体详见[方案应用模块之穿什么](https://github.com/weihai-limh/daytime_agent/blob/main/document/docs/reasoning_module.md)
