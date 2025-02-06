@@ -24,14 +24,343 @@
 <br>资产实例如下
 ```
 ```
-### 其他
-#### 数据安全
-<br>这套数据应用模式,过去主要应用于'智慧城市/园区/工厂';
-<br>在过去个人使用这个逻辑定制自己的'智能助手'除了开发成本外,
-<br>很大的难度在于个人无法获得满足应用需要的'数字孪生数据';
-<br>这个问题随着过去几年各地'CIM平台'的建成及数据的逐步开放可以获得解决;
-<br>目前通过'开放数据+私有数据'可以在低成本的情况下构建符合自己需要的服务.
-<br>但这种使用模式无论是对'引用的平台数据'还是对'私有数据'都有隐藏的风险;
-<br>例如为了进一步降低开发成本,我将我的'数字孪生数据'以prompt的形式推送到LLM进行处理,
-<br>如若使用在线LLM服务,'数字孪生数据'会缓存到对方服务中,
-<br>那时'引用的平台数据'和'私有数据'的数据安全均会受到新的挑战.
+
+### 机械操作
+#### 机器指令
+机器示例
+```
+{
+    "机械臂1":	//机器代称
+    {
+        "ip": "192.168.1.199",	//机器ip
+        "build":"workshop",	//机器所在建筑
+        "type": "weixue_arm"	//机器型号
+    },
+    "机器车1":
+    {
+        "ip": "192.168.1.211",
+        "build":"workshop",
+        "type": "weixue_car"
+    }
+}
+```
+配置
+```
+//weixue
+{
+    "car":
+    {
+        "机器车移动":
+        {
+            "code":
+            {
+                "T": 1
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "X": 45,
+                "Y": 45,
+                "SX": 300,
+                "SY": 300
+            }
+        },
+        "车载云台转动":
+        {
+            "code":
+            {
+                "T": 134
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "X": 45,
+                "Y": 45,
+                "SX": 300,
+                "SY": 300
+            }
+        },
+        "车载云台手动转动":
+        {
+            "code":
+            {
+                "T": 104
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "X": 0,
+                "Y": 0,
+                "SPD": 300
+            }
+        },
+        "控制车载LED":
+        {
+            "code":
+            {
+                "T": 132
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "IO4": 255,
+                "IO5": 255
+            }
+        },
+        "控制车载相机":
+        {
+            "code":
+            {
+                "T": 999
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "IO4": 255,
+                "IO5": 255
+            }
+        }
+    },
+    "arm":
+    {
+        "机械臂复位":
+        {
+            "code":
+            {
+                "T": 100
+            },
+            "described": "weixue",
+            "parameters": ""
+        },
+        "机械臂状态查询":
+        {
+            "code":
+            {
+                "T": 105
+            },
+            "described": "weixue",
+            "parameters": ""
+        },
+        "坐标移动":
+        {
+            "code":
+            {
+                "T": 1041
+            },
+            "parameters":
+            {
+                "x": 235,
+                "y": 0,
+                "z": 234,
+                "t": 3.14
+            }
+        },
+        "单关节弧度控制":
+        {
+            "code":
+            {
+                "T": 101
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "joint": 0,
+                "rad": 0,
+                "spd": 0,
+                "acc": 10
+            }
+        },
+        "全关节弧度控制":
+        {
+            "code":
+            {
+                "T": 122
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "b": 0,
+                "s": 0,
+                "e": 90,
+                "h": 180,
+                "spd": 10,
+                "acc": 10
+            }
+        },
+        "新建工作流":
+        {
+            "code":
+            {
+                "T": 220
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "intro": "test mission created in flash."
+            }
+        },
+        "根据名称读取工作流":
+        {
+            "code":
+            {
+                "T": 221
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a"
+            }
+        },
+        "在工作流尾部插入指令":
+        {
+            "code":
+            {
+                "T": 222
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "step": ""
+            }
+        },
+        "在工作流的指定位置插入指令":
+        {
+            "code":
+            {
+                "T": 225
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "step": ""
+            }
+        },
+        "在工作流的指定位置替换指令":
+        {
+            "code":
+            {
+                "T": 228
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "step": ""
+            }
+        },
+        "在工作流中添加一个延时指令":
+        {
+            "code":
+            {
+                "T": 224
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "delay": 3000
+            }
+        },
+        "在工作流的指定位置插入一个延时指令":
+        {
+            "code":
+            {
+                "T": 227
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "spd": 3000
+            }
+        },
+        "在工作流的指定位置替换一个延时指令":
+        {
+            "code":
+            {
+                "T": 230
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "delay": 3000
+            }
+        },
+        "在工作流的指定位置删除一个指令":
+        {
+            "code":
+            {
+                "T": 231
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3
+            }
+        },
+        "根据名称播放任务流":
+        {
+            "code":
+            {
+                "T": 242
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "times": 0
+            }
+        },
+        "根据名称从指定位置开启执行循环":
+        {
+            "code":
+            {
+                "T": 223
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "spd": 0.25
+            }
+        },
+        "根据名称从插入位置开启执行循环":
+        {
+            "code":
+            {
+                "T": 226
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "spd": 0.25
+            }
+        },
+        "根据名称从替换位置开启执行循环":
+        {
+            "code":
+            {
+                "T": 229
+            },
+            "described": "weixue",
+            "parameters":
+            {
+                "name": "mission_a",
+                "stepNum": 3,
+                "spd": 0.25
+            }
+        }
+    }
+}
+```
