@@ -175,7 +175,7 @@
 ### 代理模块
 #### 模块示例
 ##### 穿什么
-<br>其中在该示例应用中未实际调用'虚拟换装'及使用私域'资源'
+<br>其中在该示例应用中未实际调用'虚拟换装'及使用私域'资源'<br>
 ![明天威海穿搭推荐](https://github.com/weihai-limh/daytime_agent/blob/main/document/video/agent_test1.gif)
 其数据链路如下:
 ```
