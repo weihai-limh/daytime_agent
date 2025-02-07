@@ -35,3 +35,4 @@
 <br>生成初始解决方案后,基于prompt将'初始解决方案'转译为'结构化自然语言'版的'解决方案'
 <br>继而从'结构化自然语言'中抽离出'指令',并通过'指令系统'完成对具体'子任务'的实现
 ![场景资源和资产实例](https://github.com/weihai-limh/daytime_agent/blob/main/document/image/logical_chain_example_1.png )
+<br>其中'指令:影像处理;虚拟换装,<user_input的uuid>'封装[接口](https://help.aliyun.com/zh/model-studio/developer-reference/outfitanyone-api?spm=a2c4g.11186623.help-menu-2400256.d_3_3_3_10_2.3dd8f41cfFSxpA&scm=20140722.H_2796626._.OR_help-T_cn~zh-V_1)如下
